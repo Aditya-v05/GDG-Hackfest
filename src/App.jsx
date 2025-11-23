@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './components/sections/Navbar';
 import HeroSection from './components/sections/HeroSection';
+import BannerSection from './components/sections/BannerSection';
 import AboutSection from './components/sections/AboutSection';
 import TracksSection from './components/sections/TracksSection';
 import TimelineSection from './components/sections/TimelineSection';
@@ -21,6 +22,7 @@ function App() {
     <div className="bg-off-white overflow-x-hidden">
       <Navbar />
       <HeroSection />
+      <BannerSection />
       <AboutSection />
       <TracksSection />
       <TimelineSection />

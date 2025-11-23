@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { teamMembers } from '../../data/team';
 import { ThreeLoops, AngledSlashes, Asterisk } from '../icons';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const TeamSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
   const sectionRef = useRef(null);
   const carouselRef = useRef(null);
 
@@ -14,7 +16,7 @@ const TeamSection = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.5 }
     );
 
     if (sectionRef.current) {
@@ -24,34 +26,36 @@ const TeamSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Auto-scroll carousel effect
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
+  const scroll = (direction) => {
+    if (carouselRef.current) {
+      const scrollAmount = 300;
+      const currentScroll = carouselRef.current.scrollLeft;
+      const maxScroll = carouselRef.current.scrollWidth - carouselRef.current.clientWidth;
 
-    let scrollAmount = 0;
-    const scrollSpeed = 1; // pixels per frame
-    const cardWidth = 280; // Approximate card width including gap
-
-    const autoScroll = () => {
-      scrollAmount += scrollSpeed;
-
-      // Reset scroll when we've scrolled through half the content (duplicate set)
-      if (scrollAmount >= cardWidth * teamMembers.length) {
-        scrollAmount = 0;
-        carousel.scrollLeft = 0;
+      let newPosition;
+      if (direction === 'left') {
+        // Loop to end if at or near beginning
+        if (currentScroll <= 10) {
+          newPosition = maxScroll;
+        } else {
+          newPosition = currentScroll - scrollAmount;
+        }
       } else {
-        carousel.scrollLeft = scrollAmount;
+        // Loop to beginning if at or near end
+        if (currentScroll >= maxScroll - 10) {
+          newPosition = 0;
+        } else {
+          newPosition = currentScroll + scrollAmount;
+        }
       }
-    };
 
-    const interval = setInterval(autoScroll, 20);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  // Duplicate the team members array for infinite scroll effect
-  const duplicatedMembers = [...teamMembers, ...teamMembers];
+      carouselRef.current.scrollTo({
+        left: newPosition,
+        behavior: 'smooth'
+      });
+      setScrollPosition(newPosition);
+    }
+  };
 
   return (
     <section
@@ -90,18 +94,37 @@ const TeamSection = () => {
         </div>
 
         {/* Carousel Container */}
-        <div className="relative">
+        <div className="relative rounded-3xl overflow-hidden">
           {/* Gradient Fade Edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-pastel-blue/80 to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-pastel-yellow/80 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute left-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-r from-pastel-blue to-transparent z-10 pointer-events-none rounded-l-3xl"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-l from-pastel-yellow to-transparent z-10 pointer-events-none rounded-r-3xl"></div>
 
-          {/* Scrolling Carousel */}
+          {/* Left Arrow */}
+          <button
+            onClick={() => scroll('left')}
+            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 bg-white border-4 border-black rounded-full p-3 md:p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:scale-110 transition-all duration-300"
+            aria-label="Scroll left"
+          >
+            <ChevronLeft size={24} className="md:w-8 md:h-8" />
+          </button>
+
+          {/* Right Arrow */}
+          <button
+            onClick={() => scroll('right')}
+            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 bg-white border-4 border-black rounded-full p-3 md:p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:scale-110 transition-all duration-300"
+            aria-label="Scroll right"
+          >
+            <ChevronRight size={24} className="md:w-8 md:h-8" />
+          </button>
+
+          {/* Scrolling Carousel - Manual Navigation */}
           <div
             ref={carouselRef}
-            className="flex gap-6 md:gap-8 overflow-x-hidden scroll-smooth py-8"
+            className="overflow-x-auto py-8 px-12 scrollbar-hide"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
-            {duplicatedMembers.map((member, index) => (
+            <div className="flex gap-6 md:gap-8">
+              {teamMembers.map((member, index) => (
               <div
                 key={index}
                 className="flex-shrink-0 w-64 md:w-72 transform hover:scale-110 hover:-rotate-2 transition-all duration-300"
@@ -115,6 +138,7 @@ const TeamSection = () => {
                         src={member.image}
                         alt={member.name}
                         className="w-full h-full object-cover"
+                        style={{ objectPosition: 'center 30%' }}
                         loading="lazy"
                       />
                     </div>
@@ -141,7 +165,8 @@ const TeamSection = () => {
                   </div>
                 </div>
               </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
