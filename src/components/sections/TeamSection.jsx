@@ -138,7 +138,10 @@ const TeamSection = () => {
                         src={member.image}
                         alt={member.name}
                         className="w-full h-full object-cover"
-                        style={{ objectPosition: 'center 30%' }}
+                        style={{
+                          objectPosition: member.imagePosition || 'center 30%',
+                          objectFit: 'cover'
+                        }}
                         loading="lazy"
                       />
                     </div>
