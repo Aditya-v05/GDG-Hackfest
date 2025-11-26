@@ -30,10 +30,10 @@ const TimelineSection = () => {
     <section id="timeline" ref={sectionRef} className="py-16 md:py-20 px-4 md:px-8 lg:px-16 bg-off-white relative overflow-hidden">
       {/* Doodle Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 right-10 w-16 h-16 bg-brand-blue rotate-12 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] animate-float"></div>
-        <div className="absolute bottom-20 left-8 w-12 h-12 bg-brand-red -rotate-12 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] animate-float delay-500"></div>
-        <div className="absolute top-1/2 right-1/4 w-20 h-20 bg-brand-yellow rotate-45 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] animate-float delay-1000"></div>
-        <div className="absolute top-1/4 left-1/4 w-14 h-14 bg-brand-green -rotate-45 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] animate-float delay-1500"></div>
+        <div className="absolute top-10 right-10 w-16 h-16 bg-brand-blue rotate-12 border-2 border-black rounded-xl shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] animate-float"></div>
+        <div className="absolute bottom-20 left-8 w-12 h-12 bg-brand-red -rotate-12 border-2 border-black rounded-xl shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] animate-float delay-500"></div>
+        <div className="absolute top-1/2 right-1/4 w-20 h-20 bg-brand-yellow rotate-45 border-2 border-black rounded-xl shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] animate-float delay-1000"></div>
+        <div className="absolute top-1/4 left-1/4 w-14 h-14 bg-brand-green -rotate-45 border-2 border-black rounded-xl shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] animate-float delay-1500"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -87,13 +87,14 @@ const TimelineSection = () => {
                           <div className={`
                             ${item.color} 
                             border-2 border-black 
+                            rounded-2xl
                             p-3 md:p-4 lg:p-5 
                             shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]
                             hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]
                             hover:-translate-y-1
                             transition-all duration-300
                           `}>
-                            <div className="bg-white border-2 border-black px-2 md:px-3 py-1 md:py-2 mb-2 md:mb-3 inline-block shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                            <div className="bg-white border-2 border-black rounded-lg px-2 md:px-3 py-1 md:py-2 mb-2 md:mb-3 inline-block shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                               <div className="font-mono font-black text-xs md:text-sm lg:text-base">{item.time}</div>
                             </div>
                             <div className="font-heading font-bold text-sm md:text-base lg:text-lg text-white">
@@ -121,9 +122,10 @@ const TimelineSection = () => {
                     )}
                   </div>
                   
-                  {/* Center Square Marker */}
+                  {/* Center Marker */}
                   <div className={`
                     w-5 h-5 ${item.color} border-2 border-black z-50 flex-shrink-0
+                    rounded-md
                     shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]
                     -mx-[10px]
                   `}></div>
@@ -142,13 +144,14 @@ const TimelineSection = () => {
                           <div className={`
                             ${item.color} 
                             border-2 border-black 
+                            rounded-2xl
                             p-3 md:p-4 lg:p-5 
                             shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]
                             hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]
                             hover:-translate-y-1
                             transition-all duration-300
                           `}>
-                            <div className="bg-white border-2 border-black px-2 md:px-3 py-1 md:py-2 mb-2 md:mb-3 inline-block shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                            <div className="bg-white border-2 border-black rounded-lg px-2 md:px-3 py-1 md:py-2 mb-2 md:mb-3 inline-block shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                               <div className="font-mono font-black text-xs md:text-sm lg:text-base">{item.time}</div>
                             </div>
                             <div className="font-heading font-bold text-sm md:text-base lg:text-lg text-white">
@@ -206,6 +209,7 @@ const TimelineSection = () => {
                   <div className={`
                     ${item.color} 
                     border-2 border-black 
+                    rounded-2xl
                     p-4 
                     shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]
                     hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]
@@ -213,7 +217,7 @@ const TimelineSection = () => {
                     transition-all duration-300
                   `}>
                     {/* Time Block */}
-                    <div className="bg-white border-2 border-black px-3 py-2 mb-2 inline-block shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                    <div className="bg-white border-2 border-black rounded-lg px-3 py-2 mb-2 inline-block shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                       <div className="font-mono font-black text-sm">{item.time}</div>
                     </div>
                     
