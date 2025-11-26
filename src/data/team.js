@@ -61,7 +61,7 @@ export const teamMembers = [
   {
     name: "Tamilarasu",
     role: "UI/UX Lead",
-    image: "/assets/photos/teamphotos/Polish_20241017_221304347.png",
+    image: "/assets/photos/teamphotos/WhatsApp Image 2025-11-25 at 7.32.28 PM.jpeg",
     frameColor: "Blue",
     imagePosition: "center 30%"
   },
