@@ -4,25 +4,25 @@
 export const aboutPhotos = [
   {
     id: 1,
-    photo: "https://via.placeholder.com/400x300/4285f4/ffffff?text=Event+Photo+1", // Replace with your photo URL or path
+    photo: "/assets/photos/IMG_4847.png", // Replace with your photo URL or path
     frameColor: "Blue",
-    framePath: "/assets/photoframes/GDG-Campus-Social-PhotoFrame-Blue.jpg",
+    framePath: "/assets/photoframes/GDG-Campus-Social-PhotoFrame-Blue.png",
     caption: "Building the future",
     rotation: "-5deg"
   },
   {
     id: 2,
-    photo: "https://via.placeholder.com/400x300/ea4335/ffffff?text=Event+Photo+2", // Replace with your photo URL or path
+    photo: "/assets/photos/IMG_5135.png", // Replace with your photo URL or path
     frameColor: "Red",
-    framePath: "/assets/photoframes/GDG-Campus-Social-PhotoFrame-Red.jpg",
+    framePath: "/assets/photoframes/GDG-Campus-Social-PhotoFrame-Red.png",
     caption: "Ideas becoming reality",
     rotation: "2deg"
   },
   {
     id: 3,
-    photo: "https://via.placeholder.com/400x300/34a853/ffffff?text=Event+Photo+3", // Replace with your photo URL or path
+    photo: "/assets/photos/IMG_5735.png", // Replace with your photo URL or path
     frameColor: "Green",
-    framePath: "/assets/photoframes/GDG-Campus-Social-PhotoFrame-Green.jpg",
+    framePath: "/assets/photoframes/GDG-Campus-Social-PhotoFrame-Green.png",
     caption: "Dreams achieved",
     rotation: "-3deg"
   }
