@@ -25,7 +25,7 @@ export const contacts = [
     name: "Aditya V",
     role: "Non-Technical Lead",
     phone: "+91 63800 07564",
-    email: "adityaspark@gmail.com",
+    email: "adityaspark05@gmail.com",
     bgColor: "bg-pastel-green"
   }
 ];
