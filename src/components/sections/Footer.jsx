@@ -48,7 +48,7 @@ const Footer = () => {
           <div>
             <h3 className="font-heading font-bold text-lg md:text-xl mb-4 md:mb-6">Contact</h3>
             <div className="space-y-3 md:space-y-4 font-mono text-sm md:text-base text-gray-300">
-              <p>hackfest@gdgksrce.dev</p>
+              <p>gdgksrce@gmail.com</p>
               <p>K.S.R College of Engineering<br />Tiruchengode<br />Tamil Nadu 637215</p>
             </div>
           </div>
