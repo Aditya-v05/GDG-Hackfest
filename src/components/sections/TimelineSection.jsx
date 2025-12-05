@@ -9,10 +9,11 @@ const TimelineSection = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          // Smooth staggered animation with shorter delays
           timelineEvents.forEach((_, index) => {
             setTimeout(() => {
               setVisibleEvents(prev => [...prev, index]);
-            }, index * 200);
+            }, index * 80);
           });
         }
       },
@@ -69,9 +70,10 @@ const TimelineSection = () => {
                   key={index}
                   className={`
                     relative flex items-center
-                    ${isVisible ? 'fade-in-up' : 'opacity-0'}
+                    transition-all duration-700 ease-out
+                    ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
                   `}
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  style={{ transitionDelay: `${index * 80}ms` }}
                 >
                   {/* Left side container - takes exactly 50% */}
                   <div className={`w-1/2 flex items-center ${isLeft ? 'flex-row pr-3' : 'flex-row-reverse pl-3'}`}>
@@ -95,7 +97,7 @@ const TimelineSection = () => {
                             transition-all duration-300
                           `}>
                             <div className="bg-white border-2 border-black rounded-lg px-2 md:px-3 py-1 md:py-2 mb-2 md:mb-3 inline-block shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-                              <div className="font-mono font-black text-xs md:text-sm lg:text-base">{item.time}</div>
+                              <div className="font-mono font-black text-xs md:text-sm lg:text-base">{item.date ? `${item.date} • ` : ''}{item.time}</div>
                             </div>
                             <div className="font-heading font-bold text-sm md:text-base lg:text-lg text-white">
                               {item.event}
@@ -152,7 +154,7 @@ const TimelineSection = () => {
                             transition-all duration-300
                           `}>
                             <div className="bg-white border-2 border-black rounded-lg px-2 md:px-3 py-1 md:py-2 mb-2 md:mb-3 inline-block shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-                              <div className="font-mono font-black text-xs md:text-sm lg:text-base">{item.time}</div>
+                              <div className="font-mono font-black text-xs md:text-sm lg:text-base">{item.date ? `${item.date} • ` : ''}{item.time}</div>
                             </div>
                             <div className="font-heading font-bold text-sm md:text-base lg:text-lg text-white">
                               {item.event}
@@ -198,13 +200,13 @@ const TimelineSection = () => {
                 <div
                   key={index}
                   className={`
-                    ${isVisible ? 'fade-in-up' : 'opacity-0'}
+                    transition-all duration-700 ease-out
+                    ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
                     ${rotation}
                     ${leftOffset}
                     hover:rotate-0
-                    transition-all duration-300
                   `}
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  style={{ transitionDelay: `${index * 80}ms` }}
                 >
                   <div className={`
                     ${item.color} 
@@ -218,7 +220,7 @@ const TimelineSection = () => {
                   `}>
                     {/* Time Block */}
                     <div className="bg-white border-2 border-black rounded-lg px-3 py-2 mb-2 inline-block shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-                      <div className="font-mono font-black text-sm">{item.time}</div>
+                      <div className="font-mono font-black text-sm">{item.date ? `${item.date} • ` : ''}{item.time}</div>
                     </div>
                     
                     {/* Event Text */}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, MessageCircle, Linkedin, Twitter, Heart } from 'lucide-react';
+import { Linkedin, Twitter, Instagram, Heart } from 'lucide-react';
 import { GDGLogo } from '../icons';
 
 const Footer = () => {
@@ -17,17 +17,32 @@ const Footer = () => {
               K.S.R College of Engineering's official Google Developer Group chapter.
             </p>
             <div className="flex gap-3 md:gap-4">
-              <a href="#" className="w-10 h-10 bg-white text-brand-black rounded-full flex items-center justify-center border-2 border-white hover:bg-brand-blue hover:text-white transition-colors">
-                <Github size={20} />
+              <a 
+                href="https://x.com/gdgksrce" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-white text-brand-black rounded-full flex items-center justify-center border-2 border-white hover:bg-brand-blue hover:text-white transition-colors"
+                aria-label="Follow us on Twitter/X"
+              >
+                <Twitter size={20} />
               </a>
-              <a href="#" className="w-10 h-10 bg-white text-brand-black rounded-full flex items-center justify-center border-2 border-white hover:bg-brand-blue hover:text-white transition-colors">
-                <MessageCircle size={20} />
-              </a>
-              <a href="#" className="w-10 h-10 bg-white text-brand-black rounded-full flex items-center justify-center border-2 border-white hover:bg-brand-blue hover:text-white transition-colors">
+              <a 
+                href="https://www.linkedin.com/company/gdg-ksriet24/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-white text-brand-black rounded-full flex items-center justify-center border-2 border-white hover:bg-brand-blue hover:text-white transition-colors"
+                aria-label="Follow us on LinkedIn"
+              >
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="w-10 h-10 bg-white text-brand-black rounded-full flex items-center justify-center border-2 border-white hover:bg-brand-blue hover:text-white transition-colors">
-                <Twitter size={20} />
+              <a 
+                href="https://www.instagram.com/gdg_ksrce/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-white text-brand-black rounded-full flex items-center justify-center border-2 border-white hover:bg-brand-blue hover:text-white transition-colors"
+                aria-label="Follow us on Instagram"
+              >
+                <Instagram size={20} />
               </a>
             </div>
           </div>

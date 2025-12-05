@@ -13,8 +13,8 @@ const HeroSection = () => {
     const timer = setInterval(() => {
       currentStep++;
       setCount({
-        hackers: Math.floor((100 * currentStep) / steps),
-        hours: Math.floor((24 * currentStep) / steps)
+        hackers: Math.floor((400 * currentStep) / steps),
+        hours: Math.floor((36 * currentStep) / steps)
       });
 
       if (currentStep >= steps) clearInterval(timer);
@@ -32,7 +32,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 px-4 bg-gradient-to-b from-sky-300 via-sky-200 to-sky-100">
+    <section className="relative min-h-screen flex items-center justify-center overflow-x-hidden pt-20 px-4 bg-gradient-to-b from-sky-300 via-sky-200 to-sky-100">
       
       {/* Doodle-Themed Natural Scene Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -97,45 +97,51 @@ const HeroSection = () => {
         </div>
         
         {/* Wavy Ocean with Multiple Wave Layers */}
-        <svg 
-          className="absolute bottom-12 left-0 w-full h-52 md:h-64"
-          viewBox="0 0 1440 350"
-          preserveAspectRatio="none"
-        >
-          {/* Wave 1 - Back (darker blue) */}
-          <path 
-            className="animate-wave-slow"
-            fill="#2563eb"
-            stroke="#000"
-            strokeWidth="3"
-            d="M0,100 C150,150 300,50 450,100 C600,150 750,50 900,100 C1050,150 1200,50 1350,100 L1440,100 L1440,350 L0,350 Z"
-          />
-          {/* Wave 2 */}
-          <path 
-            className="animate-wave-medium"
-            fill="#3b82f6"
-            stroke="#000"
-            strokeWidth="3"
-            d="M0,140 C120,180 240,100 360,140 C480,180 600,100 720,140 C840,180 960,100 1080,140 C1200,180 1320,100 1440,140 L1440,350 L0,350 Z"
-          />
-          {/* Wave 3 */}
-          <path 
-            className="animate-wave-fast"
-            fill="#60a5fa"
-            stroke="#000"
-            strokeWidth="3"
-            d="M0,180 C100,220 200,140 300,180 C400,220 500,140 600,180 C700,220 800,140 900,180 C1000,220 1100,140 1200,180 C1300,220 1400,140 1440,180 L1440,350 L0,350 Z"
-          />
-          {/* Wave 4 - Front (lightest) */}
-          <path 
-            className="animate-wave-slow"
-            style={{ animationDelay: '0.5s' }}
-            fill="#93c5fd"
-            stroke="#000"
-            strokeWidth="3"
-            d="M0,220 C80,250 160,190 240,220 C320,250 400,190 480,220 C560,250 640,190 720,220 C800,250 880,190 960,220 C1040,250 1120,190 1200,220 C1280,250 1360,190 1440,220 L1440,350 L0,350 Z"
-          />
-        </svg>
+        <div className="absolute bottom-12 left-0 right-0 w-full h-52 md:h-64 overflow-hidden">
+          <svg 
+            className="w-full h-full"
+            viewBox="0 0 5000 350"
+            preserveAspectRatio="none"
+          >
+            {/* Wave 1 - Back (darker blue) - More wavy */}
+            <path 
+              className="animate-wave-slow"
+              fill="#2563eb"
+              stroke="#000"
+              strokeWidth="3"
+              d="M0,100 C200,130 400,70 600,100 C800,130 1000,70 1200,100 C1400,130 1600,70 1800,100 C2000,130 2200,70 2400,100 C2600,130 2800,70 3000,100 C3200,130 3400,70 3600,100 C3800,130 4000,70 4200,100 C4400,130 4600,70 4800,100 C4900,120 5000,110 5000,100 L5000,350 L0,350 Z"
+              vectorEffect="non-scaling-stroke"
+            />
+            {/* Wave 2 - More wavy */}
+            <path 
+              className="animate-wave-medium"
+              fill="#3b82f6"
+              stroke="#000"
+              strokeWidth="3"
+              d="M0,140 C250,170 500,110 750,140 C1000,170 1250,110 1500,140 C1750,170 2000,110 2250,140 C2500,170 2750,110 3000,140 C3250,170 3500,110 3750,140 C4000,170 4250,110 4500,140 C4750,160 5000,150 5000,140 L5000,350 L0,350 Z"
+              vectorEffect="non-scaling-stroke"
+            />
+            {/* Wave 3 - More wavy */}
+            <path 
+              className="animate-wave-fast"
+              fill="#60a5fa"
+              stroke="#000"
+              strokeWidth="3"
+              d="M0,180 C300,210 600,150 900,180 C1200,210 1500,150 1800,180 C2100,210 2400,150 2700,180 C3000,210 3300,150 3600,180 C3900,210 4200,150 4500,180 C4800,200 5000,190 5000,180 L5000,350 L0,350 Z"
+              vectorEffect="non-scaling-stroke"
+            />
+            {/* Wave 4 - Front (lightest) - More wavy */}
+            <path 
+              className="animate-wave-slow"
+              style={{ animationDelay: '0.5s' }}
+              fill="#93c5fd"
+              stroke="#000"
+              strokeWidth="3"
+              d="M0,220 C350,250 700,190 1050,220 C1400,250 1750,190 2100,220 C2450,250 2800,190 3150,220 C3500,250 3850,190 4200,220 C4550,250 4900,210 5000,220 L5000,350 L0,350 Z"
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
+        </div>
         
         {/* Multiple Doodle Boats */}
         {/* Boat 1 - Main boat */}
