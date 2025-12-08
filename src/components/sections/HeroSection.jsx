@@ -248,9 +248,16 @@ const HeroSection = () => {
             data-button-theme="dark-inverted"
             style={{ height: '56px', width: '312px', minWidth: '280px' }}
           ></div>
-          <Button variant="outline" className="text-base md:text-lg px-8 md:px-10 py-3 md:py-4 w-full sm:w-auto bg-white hover:scale-105 transition-all duration-300 font-bold">
-            Join Discord
-          </Button>
+          <a 
+            href="https://discord.gg/bmAaQWMp" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block"
+          >
+            <Button variant="outline" className="text-base md:text-lg px-8 md:px-10 py-3 md:py-4 w-full sm:w-auto bg-white hover:scale-105 transition-all duration-300 font-bold">
+              Join Discord
+            </Button>
+          </a>
         </div>
       </div>
 
