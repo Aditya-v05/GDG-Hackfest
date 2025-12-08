@@ -4,12 +4,12 @@ import { Button } from '../ui';
 const SponsorsSection = () => {
   // Gold Tier Sponsors
   const goldSponsors = [
-    { name: "Devfolio", logo: "/_Light.png" }
+    { name: "Devfolio", logo: "/_Light.png", alt: "DEVFOLIO LOGO" }
   ];
 
   // Silver Tier Sponsors
   const silverSponsors = [
-    { name: "ETHIndia", logo: "/Untitled.png" }
+    { name: "ETHIndia", logo: "/Untitled.png", alt: "ETHINDIA LOGO" }
   ];
 
   // Other Sponsors (Bronze/Community)
@@ -42,8 +42,11 @@ const SponsorsSection = () => {
               <div className="flex flex-col items-center gap-4">
                 <img 
                   src={sponsor.logo} 
-                  alt={sponsor.name}
-                  className="w-32 h-16 md:w-40 md:h-20 object-contain grayscale"
+                  alt={sponsor.alt || sponsor.name}
+                  className="w-40 h-20 md:w-48 md:h-24 object-contain"
+                  onError={(e) => {
+                    console.error(`Failed to load logo: ${sponsor.logo}`);
+                  }}
                 />
               </div>
             </div>
@@ -69,8 +72,11 @@ const SponsorsSection = () => {
               <div className="flex flex-col items-center gap-4">
                 <img 
                   src={sponsor.logo} 
-                  alt={sponsor.name}
-                  className="w-32 h-16 md:w-40 md:h-20 object-contain"
+                  alt={sponsor.alt || sponsor.name}
+                  className="w-40 h-20 md:w-48 md:h-24 object-contain"
+                  onError={(e) => {
+                    console.error(`Failed to load logo: ${sponsor.logo}`);
+                  }}
                 />
               </div>
             </div>
