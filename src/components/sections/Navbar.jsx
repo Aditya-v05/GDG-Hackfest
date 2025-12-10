@@ -33,7 +33,7 @@ const Navbar = () => {
       `}
       style={{ maxWidth: 'calc(100vw - 16px)' }}
     >
-      <div className="bg-white/10 backdrop-blur-md border-2 border-black rounded-2xl px-2 py-1.5 sm:px-3 sm:py-2 md:px-6 md:py-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] w-full box-border">
+      <div className="bg-white/[0.05] backdrop-blur-sm border-2 border-black rounded-2xl px-2 py-1.5 sm:px-3 sm:py-2 md:px-6 md:py-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] w-full box-border">
         <div className="flex items-center gap-1 sm:gap-2 md:gap-6 relative w-full min-w-0 box-border">
           {/* Logo */}
           <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2 z-10 min-w-0 flex-shrink-0">
