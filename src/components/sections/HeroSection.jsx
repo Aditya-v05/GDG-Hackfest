@@ -249,7 +249,7 @@ const HeroSection = () => {
             style={{ height: '56px', width: '312px', minWidth: '280px' }}
           ></div>
           <a 
-            href="https://discord.gg/bmAaQWMp" 
+            href="https://discord.gg/yybBcEdS66" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-block"
