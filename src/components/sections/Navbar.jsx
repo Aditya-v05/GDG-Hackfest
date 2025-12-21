@@ -1,22 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { GDGLogo } from '../icons';
+import { Button } from '../ui';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  // Load Devfolio SDK script
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://apply.devfolio.co/v2/sdk.js';
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
 
 
   const scrollToSection = (id) => {
@@ -144,13 +131,18 @@ const Navbar = () => {
             >
               Contact
             </button>
-            {/* Apply with Devfolio Button - Mobile menu only */}
-            <div 
-              className="apply-button apply-button-mobile w-full mt-4" 
-              data-hackathon-slug="hack-with-gdg-s3" 
-              data-button-theme="dark-inverted"
-              style={{ height: '44px', width: '100%', minHeight: '44px' }}
-            ></div>
+            {/* Register Button - Mobile menu only */}
+            <div className="w-full mt-4">
+              <Button 
+                variant="primary" 
+                href="https://hack-with-gdg-s3.devfolio.co/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full text-sm py-2.5"
+              >
+                Register
+              </Button>
+            </div>
         </div>
       </div>
     </nav>
