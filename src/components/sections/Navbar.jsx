@@ -32,7 +32,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-2 md:gap-3 font-mono text-sm font-bold flex-shrink-0">
+          <div className="hidden md:flex items-center gap-2 md:gap-3 font-mono text-sm font-bold flex-shrink-0">
             <button 
               onClick={() => scrollToSection('about')} 
               className="bg-white border-2 border-black px-3 py-1.5 md:px-4 md:py-2 rounded-lg shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 hover:-translate-x-0.5 hover:bg-brand-blue hover:text-white transition-all duration-150 active:translate-x-[3px] active:translate-y-[3px] active:shadow-none"
@@ -67,7 +67,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden w-7 h-7 sm:w-8 sm:h-8 flex flex-col justify-center gap-1 sm:gap-1.5 relative z-[100] flex-shrink-0 ml-auto"
+            className="md:hidden w-7 h-7 sm:w-8 sm:h-8 flex flex-col justify-center gap-1 sm:gap-1.5 relative z-[100] flex-shrink-0 ml-auto"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
             style={{ zIndex: 100, minWidth: '28px' }}
@@ -93,7 +93,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Dropdown */}
       <div 
-        className={`lg:hidden absolute top-full mt-2 left-0 right-0 w-full bg-white/80 backdrop-blur-md border-2 border-black rounded-2xl p-3 sm:p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 overflow-hidden z-[99] ${
+        className={`md:hidden absolute top-full mt-2 left-0 right-0 w-full bg-white/80 backdrop-blur-md border-2 border-black rounded-2xl p-3 sm:p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 overflow-hidden z-[99] ${
           mobileMenuOpen 
             ? 'opacity-100 max-h-[600px] translate-y-0' 
             : 'opacity-0 max-h-0 -translate-y-4 pointer-events-none'
@@ -132,17 +132,15 @@ const Navbar = () => {
               Contact
             </button>
             {/* Register Button - Mobile menu only */}
-            <div className="w-full mt-4">
-              <Button 
-                variant="primary" 
-                href="https://hack-with-gdg-s3.devfolio.co/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-full text-sm py-2.5"
-              >
-                Register
-              </Button>
-            </div>
+            <Button 
+              variant="primary" 
+              href="https://hack-with-gdg-s3.devfolio.co/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-center bg-brand-blue text-white border-2 border-black px-3 py-2 rounded-lg shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 hover:-translate-x-0.5 hover:bg-blue-600 transition-all duration-150 active:translate-x-[3px] active:translate-y-[3px] active:shadow-none text-sm font-mono font-bold w-full"
+            >
+              Register
+            </Button>
         </div>
       </div>
     </nav>

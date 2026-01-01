@@ -9,7 +9,8 @@ const SponsorsSection = () => {
 
   // Silver Tier Sponsors
   const silverSponsors = [
-    { name: "ETHIndia", logo: "/Untitled.png", alt: "ETHINDIA LOGO" }
+    { name: "ETHIndia", logo: "/Untitled.png", alt: "ETHINDIA LOGO" },
+    { name: "domains.xyz", logo: "/assets/xyz-logo-color.png", alt: "DOMAINS.XYZ LOGO" }
   ];
 
   // Other Sponsors (Bronze/Community)
