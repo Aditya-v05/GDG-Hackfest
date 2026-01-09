@@ -62,7 +62,8 @@ export const teamMembers = [
     role: "Graphic Design Lead",
     image: "/assets/photos/teamphotos/WhatsApp Image 2025-11-23 at 2.10.09 PM.jpeg",
     frameColor: "Yellow",
-    imagePosition: "center 30%"
+    imagePosition: "center 30%",
+    linkedin: "https://www.linkedin.com/in/srini2475/"
   },
   {
     name: "Tamilarasu",
