@@ -43,7 +43,7 @@ const SponsorsSection = () => {
             <div className="w-8 h-8 bg-white border-2 border-black rounded-full"></div>
           </div>
         <div className="overflow-x-auto md:overflow-visible scrollbar-hide snap-x snap-mandatory">
-          <div className="flex flex-nowrap md:flex-wrap justify-start md:justify-center items-center gap-6 md:gap-8 md:snap-none">
+          <div className="flex flex-nowrap md:flex-wrap justify-center md:justify-center items-center gap-6 md:gap-8 md:snap-none">
             {goldSponsors.map((sponsor, index) => (
               <a
                 key={index}
@@ -86,7 +86,7 @@ const SponsorsSection = () => {
                 href={sponsor.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-br from-gray-100 to-gray-50 border-4 border-gray-400 rounded-2xl px-8 md:px-12 py-6 md:py-8 shadow-[6px_6px_0px_0px_rgba(156,163,175,1)] hover:shadow-[8px_8px_0px_0px_rgba(156,163,175,1)] hover:-translate-y-1 transition-all duration-300 cursor-pointer block min-w-[220px] snap-start"
+                className="bg-gradient-to-br from-gray-100 to-gray-50 border-4 border-gray-400 rounded-2xl px-8 md:px-12 py-6 md:py-8 shadow-[6px_6px_0px_0px_rgba(156,163,175,1)] hover:shadow-[8px_8px_0px_0px_rgba(156,163,175,1)] hover:-translate-y-1 transition-all duration-300 cursor-pointer block min-w-[80vw] md:min-w-[220px] snap-center md:snap-start"
               >
                 <div className="flex flex-col items-center gap-4">
                   <img 
@@ -114,14 +114,14 @@ const SponsorsSection = () => {
           <div className="w-8 h-8 bg-white border-2 border-black rounded-full"></div>
         </div>
         <div className="overflow-x-auto md:overflow-visible scrollbar-hide snap-x snap-mandatory">
-          <div className="flex flex-nowrap md:flex-wrap justify-start md:justify-center items-center gap-6 md:gap-8 md:snap-none">
+          <div className="flex flex-nowrap md:flex-wrap justify-center md:justify-center items-center gap-6 md:gap-8 md:snap-none">
             {mediaPartners.map((partner, index) => (
               <a
                 key={index}
                 href={partner.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-br from-blue-50 to-blue-100 border-4 border-brand-blue rounded-2xl px-8 md:px-12 py-6 md:py-8 shadow-[6px_6px_0px_0px_rgba(66,133,244,1)] hover:shadow-[8px_8px_0px_0px_rgba(66,133,244,1)] hover:-translate-y-1 transition-all duration-300 cursor-pointer block min-w-[220px] snap-start"
+                className="bg-gradient-to-br from-blue-50 to-blue-100 border-4 border-brand-blue rounded-2xl px-8 md:px-12 py-6 md:py-8 shadow-[6px_6px_0px_0px_rgba(66,133,244,1)] hover:shadow-[8px_8px_0px_0px_rgba(66,133,244,1)] hover:-translate-y-1 transition-all duration-300 cursor-pointer block min-w-[80vw] md:min-w-[220px] snap-center md:snap-start"
               >
                 <div className="flex flex-col items-center gap-4">
                   <img 
