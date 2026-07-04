@@ -35,24 +35,6 @@ const ContactSection = () => {
             <div key={index} className={`${contact.bgColor} border-2 border-black rounded-2xl p-5 md:p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-300`}>
               <h3 className="font-heading font-bold text-xl md:text-2xl mb-1 md:mb-2">{contact.name}</h3>
               <p className="font-mono text-xs md:text-sm mb-3 md:mb-4 text-gray-700">{contact.role}</p>
-
-              <div className="space-y-2 md:space-y-3">
-                <a
-                  href={`tel:${contact.phone}`}
-                  className="flex items-center gap-2 md:gap-3 p-2 md:p-3 bg-white border-2 border-black rounded-lg hover:translate-x-1 transition-transform font-mono text-sm md:text-base"
-                >
-                  <Phone size={18} className="md:w-5 md:h-5 flex-shrink-0" />
-                  <span>{contact.phone}</span>
-                </a>
-
-                <a
-                  href={`mailto:${contact.email}`}
-                  className="flex items-center gap-2 md:gap-3 p-2 md:p-3 bg-white border-2 border-black rounded-lg hover:translate-x-1 transition-transform font-mono text-xs md:text-sm break-all"
-                >
-                  <Mail size={18} className="md:w-5 md:h-5 flex-shrink-0" />
-                  <span>{contact.email}</span>
-                </a>
-              </div>
             </div>
           ))}
         </div>
